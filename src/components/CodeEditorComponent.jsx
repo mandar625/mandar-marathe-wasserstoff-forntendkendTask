@@ -49,7 +49,7 @@ const MonacoEditorComponent = () => {
 
   return (
     <div className="editor">
-      {activeFile && (
+      {activeFile ? (
         <Editor
           key={editorKey}
           height="100vh"
@@ -59,7 +59,9 @@ const MonacoEditorComponent = () => {
           editorDidMount={handleEditorDidMount}
           onChange={handleChange}
         />
-      )}
+      ):<>
+         <div style={{textAlign:"center"}} >add folder and file  <br/> example :-  xyz.js</div>
+      </>}
     </div>
   );
 };
